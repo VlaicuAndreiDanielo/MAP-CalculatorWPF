@@ -68,10 +68,12 @@ Includes all features of the Standard Calculator, plus:
 - **x√y** – y-th root of x
 - **n!** – factorial of a number
 - **exp** – exponential function (e^x)
+- **Parentheses `()` are used to concatenate multiple digits or values as a single text block**  
 
 ### 💻 Programmer Calculator
 Specifically designed for programmers and developers, it includes:
 - Arithmetic: `+`, `-`, `*`, `/`, `%`
+- **Parentheses `()` are used to concatenate multiple digits or values as a single text block**  
 - Bitwise operations:
   - `AND`, `OR`, `XOR`, `NOT`
   - `NAND`, `NOR`
