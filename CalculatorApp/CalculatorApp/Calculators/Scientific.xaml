@@ -1,0 +1,200 @@
+﻿<Window x:Class="CalculatorApp.Scientific"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="C:\Computers\probleme C++\CalculatorApp_Final_Vlaicu_Andrei_Danielo\CalculatorApp\CalculatorApp\bin\Debug\net8.0-windows\Calculator.png"
+        Title="Scientific Calculator"
+        Height="700" Width="600"
+        ResizeMode="NoResize"
+        Background="{DynamicResource WindowBackground}"
+        Foreground="{DynamicResource WindowForeground}"
+        KeyDown="Window_KeyDown">
+    <Window.Resources>
+
+        <Style x:Key="SciButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="{DynamicResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="6"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="MemoryButtonStyle" TargetType="Button" 
+               BasedOn="{StaticResource SciButtonStyle}">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+
+        <Style x:Key="DisplayTextBlockStyle" TargetType="TextBlock">
+
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+
+            <Setter Property="Background" Value="{DynamicResource TextBlockBackground}"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextBlockForeground}"/>
+        </Style>
+
+        <Style x:Key="DarkMenuItemStyle" TargetType="MenuItem">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Style.Triggers>
+                <Trigger Property="IsHighlighted" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="#FFDDDDDD"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+
+        <Menu DockPanel.Dock="Top" Background="#FF2D2D30" Foreground="White" ItemContainerStyle="{StaticResource DarkMenuItemStyle}">
+            <MenuItem Header="_File">
+                <MenuItem Header="Cut" Click="MenuCut_Click"/>
+                <MenuItem Header="Copy" Click="MenuCopy_Click"/>
+                <MenuItem Header="Paste" Click="MenuPaste_Click"/>
+                <Separator/>
+                <MenuItem x:Name="menuDigitGrouping" 
+                          Header="Digit Grouping" 
+                          IsCheckable="True" 
+                          Click="MenuDigitGrouping_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Mode">
+                <MenuItem Header="Standard" Click="ModeStandard_Click"/>
+                <MenuItem Header="Programmer" Click="ModeProgrammer_Click"/>
+                <MenuItem Header="Scientific" Click="ModeScientific_Click"/>
+                <MenuItem Header="Ecuation" Click="ModeEcuation_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="Istoric" Click="btnHistory_Click"/>
+                <MenuItem Header="About" Click="MenuAbout_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Themes">
+                <MenuItem Header="Heaven Light" Click="ThemeHeavenLight_Click"/>
+                <MenuItem Header="Total Darkness" Click="ThemeTotalDarkness_Click"/>
+                <MenuItem Header="Forest Green" Click="ThemeForestGreen_Click"/>
+                <MenuItem Header="Quantum Red" Click="ThemeQuantumRed_Click"/>
+                <MenuItem Header="Deep Blue" Click="ThemeDeepBlue_Click"/>
+                <MenuItem Header="Pale Lavender" Click="ThemePaleLavender_Click"/>
+                <MenuItem Header="Sunny Yellow" Click="ThemeSunnyYellow_Click"/>
+                <MenuItem Header="Deep Orange" Click="ThemeDeepOrange_Click"/>
+                <MenuItem Header="Intense Violet" Click="ThemeIntenseViolet_Click"/>
+                <MenuItem Header="Baby Pink" Click="ThemeBabyPink_Click"/>
+            </MenuItem>
+
+            <Button Style="{DynamicResource SciButtonStyle}" Width="50" Content="Exit" Click="BtnExit_Click"/>
+        </Menu>
+
+
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="txtDisplayScientific"
+                       Style="{DynamicResource CalculatorTextBlockStyle}"
+                       Grid.Row="0"
+                       Text="0"
+                       FontSize="48"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"
+                       Margin="5" Padding="10"/>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Style="{DynamicResource MemoryButtonStyle}" Grid.Column="0" Content="MC" Click="MemoryButton_Click"/>
+                <Button Style="{DynamicResource MemoryButtonStyle}" Grid.Column="1" Content="M+" Click="MemoryButton_Click"/>
+                <Button Style="{DynamicResource MemoryButtonStyle}" Grid.Column="2" Content="M-" Click="MemoryButton_Click"/>
+                <Button Style="{DynamicResource MemoryButtonStyle}" Grid.Column="3" Content="MR" Click="MemoryButton_Click"/>
+                <Button Style="{DynamicResource MemoryButtonStyle}" Grid.Column="4" Content="MS" Click="MemoryButton_Click"/>
+                <Button Style="{DynamicResource MemoryButtonStyle}" Grid.Column="5" Content="M🠷" Click="MemoryButton_Click"/>
+            </Grid>
+
+            <UniformGrid Grid.Row="2" Rows="1" Columns="4" >
+                <Button Style="{DynamicResource SciButtonStyle}" Content="sin" Click="Trig_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="cos" Click="Trig_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="tan" Click="Trig_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="ctg" Click="Trig_Click"/>
+            </UniformGrid>
+
+            <UniformGrid Grid.Row="3" Rows="1" Columns="6">
+                <Button Style="{DynamicResource SciButtonStyle}" Content="exp" Click="Exp_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="ln" Click="Ln_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="log" Click="Log_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="x²" Click="Square_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="n!" Click="Factorial_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="x√y" Click="RadicalXY_Click"/>
+            </UniformGrid>
+
+            <UniformGrid Grid.Row="4" Rows="6" Columns="4" Margin="5">
+
+                <Button Style="{DynamicResource SciButtonStyle}" Content="CE" Click="CE_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="C" Click="C_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="⌫" Click="Backspace_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="±" Click="Negate_Click"/>
+
+                <Button Style="{DynamicResource SciButtonStyle}" Content="7" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="8" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="9" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="/" Click="Operator_Click"/>
+
+                <Button Style="{DynamicResource SciButtonStyle}" Content="4" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="5" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="6" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="*" Click="Operator_Click"/>
+
+                <Button Style="{DynamicResource SciButtonStyle}" Content="1" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="2" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="3" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="-" Click="Operator_Click"/>
+
+                <Button Style="{DynamicResource SciButtonStyle}" Content="." Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="0" Click="Digit_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="+" Click="Operator_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="=" Click="Equal_Click"/>
+
+                <Button Style="{DynamicResource SciButtonStyle}" Content="(" Click="Paren_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content=")" Click="Paren_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="%" Click="Operator_Click"/>
+                <Button Style="{DynamicResource SciButtonStyle}" Content="1/x" Click="Reciprocal_Click"/>
+            </UniformGrid>
+        </Grid>
+    </DockPanel>
+</Window>

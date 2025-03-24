@@ -1,0 +1,146 @@
+﻿<Window x:Class="CalculatorApp.Ecuation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="C:\Computers\probleme C++\CalculatorApp_Final_Vlaicu_Andrei_Danielo\CalculatorApp\CalculatorApp\bin\Debug\net8.0-windows\Calculator.png"
+        Title="Equation Calculator"
+        Height="450" Width="700"
+        ResizeMode="NoResize"
+        Background="{DynamicResource WindowBackground}"
+        Foreground="{DynamicResource WindowForeground}"
+        KeyDown="Window_KeyDown">
+    <Window.Resources>
+
+        <Style x:Key="EqButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="{DynamicResource ButtonBackground}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="6"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="DisplayTextBlockStyle" TargetType="TextBlock">
+            
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+
+            <Setter Property="Background" Value="{DynamicResource TextBlockBackground}"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextBlockForeground}"/>
+        </Style>
+        
+        <Style x:Key="DarkMenuItemStyle" TargetType="MenuItem">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Style.Triggers>
+                <Trigger Property="IsHighlighted" Value="True">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="#FFDDDDDD"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+    </Window.Resources>
+
+    <DockPanel>
+
+        <Menu DockPanel.Dock="Top" Background="#FF2D2D30" Foreground="White"  ItemContainerStyle="{StaticResource DarkMenuItemStyle}">
+
+            <MenuItem Header="_File">
+                <MenuItem Header="Cut" Click="MenuCut_Click"/>
+                <MenuItem Header="Copy" Click="MenuCopy_Click"/>
+                <MenuItem Header="Paste" Click="MenuPaste_Click"/>
+            </MenuItem>
+            <MenuItem Header="Mode">
+                <MenuItem Header="Standard" Click="ModeStandard_Click"/>
+                <MenuItem Header="Programmer" Click="ModeProgrammer_Click"/>
+                <MenuItem Header="Scientific" Click="ModeScientific_Click"/>
+                <MenuItem Header="Ecuation" Click="ModeEcuation_Click"/>
+            </MenuItem>
+            
+            <MenuItem Header="_Help">
+                <MenuItem Header="Istoric" Click="btnHistory_Click"/>
+                <MenuItem Header="About" Click="MenuAbout_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Themes">
+                <MenuItem Header="Heaven Light" Click="ThemeHeavenLight_Click"/>
+                <MenuItem Header="Total Darkness" Click="ThemeTotalDarkness_Click"/>
+                <MenuItem Header="Forest Green" Click="ThemeForestGreen_Click"/>
+                <MenuItem Header="Quantum Red" Click="ThemeQuantumRed_Click"/>
+                <MenuItem Header="Deep Blue" Click="ThemeDeepBlue_Click"/>
+                <MenuItem Header="Pale Lavender" Click="ThemePaleLavender_Click"/>
+                <MenuItem Header="Sunny Yellow" Click="ThemeSunnyYellow_Click"/>
+                <MenuItem Header="Deep Orange" Click="ThemeDeepOrange_Click"/>
+                <MenuItem Header="Intense Violet" Click="ThemeIntenseViolet_Click"/>
+                <MenuItem Header="Baby Pink" Click="ThemeBabyPink_Click"/>
+            </MenuItem>
+            <Button Style="{DynamicResource EqButtonStyle}" Width="50" Content="Exit" Click="BtnExit_Click"/>
+        </Menu>
+
+ 
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="txtEquation"
+                     Grid.Row="0"
+                     FontSize="24"
+                     Style="{DynamicResource CalculatorTextBoxStyle}"
+                     BorderThickness="1"
+                     IsReadOnly="True"
+                     Margin="5" Padding="8"
+                     HorizontalAlignment="Stretch"/> 
+                                                    
+
+            <UniformGrid Grid.Row="1" Rows="5" Columns="4" Margin="5">
+
+                <Button Style="{DynamicResource EqButtonStyle}" Content="7" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="8" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="9" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="/" Click="Btn_Click"/>
+
+                <Button Style="{DynamicResource EqButtonStyle}" Content="4" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="5" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="6" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="*" Click="Btn_Click"/>
+
+                <Button Style="{DynamicResource EqButtonStyle}" Content="1" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="2" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="3" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="-" Click="Btn_Click"/>
+
+                <Button Style="{DynamicResource EqButtonStyle}" Content="0" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="(" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content=")" Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="+" Click="Btn_Click"/>
+
+                <Button Style="{DynamicResource EqButtonStyle}" Content="C" Click="BtnClear_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="." Click="Btn_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="=" Click="BtnEqual_Click"/>
+                <Button Style="{DynamicResource EqButtonStyle}" Content="⌫" Click="Backspace_Click"/>
+            </UniformGrid>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Calculators\Ecuation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Calculators\Programmer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Calculators\Scientific.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="History\HistoryWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Memory\MemorySelectorWindow .xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Calculators\Ecuation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Calculators\Standard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Calculators\Programmer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Calculators\Scientific.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="History\HistoryWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Memory\MemorySelectorWindow .xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\BabyPinkTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\TotalDarknessTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\DeepBlueTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\PaleLavenderTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\DeepOrangeTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\QuantumRedTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\ForestGreenTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\HeavenLightTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\SunnyYellowTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\IntenseVioletTheme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
