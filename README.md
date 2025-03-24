@@ -121,6 +121,7 @@ Settings are saved in an encoded file or using .NET’s native user settings API
   - Cut, Copy, Paste
   - Toggle Digit Grouping
 - **Help Menu:**
+  - History
   - About (shows developer name and group)
 
 ---
