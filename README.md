@@ -12,8 +12,6 @@ It replicates and extends the functionality of the Windows Calculator by offerin
 
 Each mode supports both **keyboard input** and **on-screen button input**.
 
----
-
 ## 🎨 Themes
 
 The calculator comes with **10 color themes**:
@@ -31,8 +29,6 @@ The calculator comes with **10 color themes**:
 
 Both **History** and **Memory** interfaces apply the selected theme.
 
----
-
 ## 🧾 History and Memory
 
 All calculator modes have:
@@ -45,8 +41,6 @@ All calculator modes have:
   - `MR` – Recall the last stored memory value
   - `MC` – Clear all memory
   - `M🠷` – View the full memory stack, where you can select and reuse stored values
-
----
 
 ## 🧮 Mode Details
 
@@ -91,8 +85,6 @@ Specifically designed for programmers and developers, it includes:
 - Uses **postfix notation** to evaluate respecting **operator precedence**
 - Result is shown only when `=` is pressed
 
----
-
 ## 🧰 Additional Features
 
 ### ✂️ Clipboard Support
@@ -104,8 +96,6 @@ Specifically designed for programmers and developers, it includes:
 - Can be toggled on/off from the menu.
 - When enabled, it also applies to numbers displayed in different bases (BIN, HEX, etc.)
 
----
-
 ## 🔒 Persistent Settings
 
 The app remembers the following user settings even after closing:
@@ -114,8 +104,6 @@ The app remembers the following user settings even after closing:
 3. Last selected **number base** in Programmer Mode (HEX, BIN, OCT, DEC)
 
 Settings are saved in an encoded file or using .NET’s native user settings API.
-
----
 
 ## 🧰 Menu Options
 
@@ -126,8 +114,6 @@ Settings are saved in an encoded file or using .NET’s native user settings API
   - History
   - About (shows developer name and group)
 
----
-
 ## ⚠️ Input & Error Handling
 
 - Supports full **keyboard and on-screen input**
@@ -136,8 +122,6 @@ Settings are saved in an encoded file or using .NET’s native user settings API
   - Division by zero
   - Invalid input format (e.g., letters in numbers)
 - ESC key acts like the "C" button – clears current operation
-
----
 
 ## 🚫 Restrictions & UI Behavior
 
