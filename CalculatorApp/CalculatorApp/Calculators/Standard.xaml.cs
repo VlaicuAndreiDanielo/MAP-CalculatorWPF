@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using CalculatorApp.OmniCalculatorFunctions;
 
 namespace CalculatorApp
@@ -22,6 +23,9 @@ namespace CalculatorApp
             LoadSettings();
             menuDigitGrouping.IsChecked = IsDigitGrouping;
             UpdateDisplay("0");
+            string exeFolder = AppDomain.CurrentDomain.BaseDirectory;
+            string iconPath = System.IO.Path.Combine(exeFolder, "Calculator.png");
+            this.Icon = new BitmapImage(new Uri(iconPath, UriKind.Absolute));
         }
 
         #region Buttons Digit and Operation Assignment

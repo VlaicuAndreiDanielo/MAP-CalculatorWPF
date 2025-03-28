@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using CalculatorApp.OmniCalculatorFunctions;
 
 namespace CalculatorApp
@@ -14,7 +15,10 @@ namespace CalculatorApp
         public Ecuation()
         {
             InitializeComponent();
-            txtEquation.Text = "";
+            txtEquation.Text = ""; 
+            string exeFolder = AppDomain.CurrentDomain.BaseDirectory;
+            string iconPath = System.IO.Path.Combine(exeFolder, "Calculator.png");
+            this.Icon = new BitmapImage(new Uri(iconPath, UriKind.Absolute));
         }
 
         #region Buttons Creation and Operation Assignment

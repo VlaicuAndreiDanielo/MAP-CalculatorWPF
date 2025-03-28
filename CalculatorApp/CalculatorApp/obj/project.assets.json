@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Computers\\probleme C++\\CalculatorApp_Final_Vlaicu_Andrei_Danielo\\CalculatorApp\\CalculatorApp\\CalculatorApp.csproj",
+      "projectUniqueName": "C:\\Computers\\MAP-CalculatorWPF\\CalculatorApp\\CalculatorApp\\CalculatorApp.csproj",
       "projectName": "CalculatorApp",
-      "projectPath": "C:\\Computers\\probleme C++\\CalculatorApp_Final_Vlaicu_Andrei_Danielo\\CalculatorApp\\CalculatorApp\\CalculatorApp.csproj",
+      "projectPath": "C:\\Computers\\MAP-CalculatorWPF\\CalculatorApp\\CalculatorApp\\CalculatorApp.csproj",
       "packagesPath": "C:\\Users\\Fabian Andronache\\.nuget\\packages\\",
-      "outputPath": "C:\\Computers\\probleme C++\\CalculatorApp_Final_Vlaicu_Andrei_Danielo\\CalculatorApp\\CalculatorApp\\obj\\",
+      "outputPath": "C:\\Computers\\MAP-CalculatorWPF\\CalculatorApp\\CalculatorApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Fabian Andronache\\AppData\\Roaming\\NuGet\\NuGet.Config",

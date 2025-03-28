@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 using CalculatorApp.OmniCalculatorFunctions;
 
 namespace CalculatorApp
@@ -24,6 +25,9 @@ namespace CalculatorApp
             LoadSettings();
             menuDigitGroupingProgrammer.IsChecked = this.IsDigitGrouping;
             UpdateProgrammerDisplays(0);
+            string exeFolder = AppDomain.CurrentDomain.BaseDirectory;
+            string iconPath = System.IO.Path.Combine(exeFolder, "Calculator.png");
+            this.Icon = new BitmapImage(new Uri(iconPath, UriKind.Absolute));
         }
 
         #region Conversions, Displays Update, Grouping Apply and User Interface
