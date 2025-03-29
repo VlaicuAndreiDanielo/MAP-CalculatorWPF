@@ -71,4 +71,12 @@
         <Setter Property="Margin" Value="4"/>
     </Style>
 
+    <Color x:Key="DisabledButtonBackgroundColor">#FFD9A3A3</Color>
+    <Color x:Key="DisabledButtonForegroundColor">#FF4D0026</Color>
+    <Color x:Key="DisabledButtonBorderColor">#FFB37373</Color>
+
+    <SolidColorBrush x:Key="DisabledButtonBackground" Color="{StaticResource DisabledButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="DisabledButtonForeground" Color="{StaticResource DisabledButtonForegroundColor}"/>
+    <SolidColorBrush x:Key="DisabledButtonBorderBrush" Color="{StaticResource DisabledButtonBorderColor}"/>
+
 </ResourceDictionary>
