@@ -328,6 +328,8 @@ namespace CalculatorApp.OmniCalculatorFunctions
 
         public static void OmniEcuationModeEcuation_Click(object sender, RoutedEventArgs e)
         {
+            Settings.Default.LastCalculatorMode = " Ecuation";
+            Settings.Default.Save();
             MessageBox.Show("Ești deja în modul Ecuation!", "Info");
         }
         #endregion

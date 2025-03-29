@@ -1041,6 +1041,8 @@ namespace CalculatorApp.OmniCalculatorFunctions
 
         public static void OmniProgrammerModeProgrammer_Click(object sender, RoutedEventArgs e)
         {
+            Settings.Default.LastCalculatorMode = "Programmer";
+            Settings.Default.Save();
             MessageBox.Show("Ești deja în modul Programmer!", "Info");
         }
 

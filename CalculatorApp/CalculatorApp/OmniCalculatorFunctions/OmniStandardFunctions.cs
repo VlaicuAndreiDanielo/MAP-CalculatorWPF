@@ -545,6 +545,8 @@ namespace CalculatorApp.OmniCalculatorFunctions
         #region Calculator Mode
         public static void OmniStandardModeStandard_Click(object sender, RoutedEventArgs e)
         {
+            Settings.Default.LastCalculatorMode = "Standard";
+            Settings.Default.Save();
             MessageBox.Show("Ești deja în modul Standard!", "Info");
         }
 

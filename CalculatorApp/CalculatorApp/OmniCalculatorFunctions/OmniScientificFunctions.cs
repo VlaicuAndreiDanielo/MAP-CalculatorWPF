@@ -711,6 +711,8 @@ namespace CalculatorApp.OmniCalculatorFunctions
 
         public static void OmniScientificModeScientific_Click(object sender, RoutedEventArgs e)
         {
+            Settings.Default.LastCalculatorMode = "Scientific";
+            Settings.Default.Save();
             MessageBox.Show("Ești deja în modul Scientific!", "Info");
         }
 
