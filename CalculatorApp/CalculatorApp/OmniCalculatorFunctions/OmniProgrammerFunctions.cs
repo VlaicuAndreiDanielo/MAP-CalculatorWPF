@@ -975,6 +975,42 @@ namespace CalculatorApp.OmniCalculatorFunctions
             }
             return ("0", currentBase);
         }
+
+        public static void OmniProgrammerBaseEnable(int currentBase)
+        {
+            if (currentBase == 16)
+            {
+                Settings.Default.IsBaseHEX = true;
+                Settings.Default.IsBaseDEC = true;
+                Settings.Default.IsBaseOCT = true;
+                Settings.Default.IsBaseBIN = true;
+            }
+
+            if (currentBase == 10)
+            {
+                Settings.Default.IsBaseHEX = false;
+                Settings.Default.IsBaseDEC = true;
+                Settings.Default.IsBaseOCT = true;
+                Settings.Default.IsBaseBIN = true;
+            }
+
+            if (currentBase == 8)
+            {
+                Settings.Default.IsBaseHEX = false;
+                Settings.Default.IsBaseDEC = false;
+                Settings.Default.IsBaseOCT = true;
+                Settings.Default.IsBaseBIN = true;
+            }
+
+            if (currentBase == 2)
+            {
+                Settings.Default.IsBaseHEX = false;
+                Settings.Default.IsBaseDEC = false;
+                Settings.Default.IsBaseOCT = false;
+                Settings.Default.IsBaseBIN = true;
+            }
+            Settings.Default.Save();
+        }
         #endregion
 
         #region Settings

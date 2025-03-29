@@ -94,5 +94,53 @@ namespace CalculatorApp {
                 this["CalculatorTheme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBaseHEX {
+            get {
+                return ((bool)(this["IsBaseHEX"]));
+            }
+            set {
+                this["IsBaseHEX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBaseBIN {
+            get {
+                return ((bool)(this["IsBaseBIN"]));
+            }
+            set {
+                this["IsBaseBIN"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBaseDEC {
+            get {
+                return ((bool)(this["IsBaseDEC"]));
+            }
+            set {
+                this["IsBaseDEC"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IsBaseOCT {
+            get {
+                return ((bool)(this["IsBaseOCT"]));
+            }
+            set {
+                this["IsBaseOCT"] = value;
+            }
+        }
     }
 }

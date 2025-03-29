@@ -17,12 +17,13 @@ namespace CalculatorApp
         private string currentOperator = "";
         private bool isNewEntry = true;
         private string expressionChain = "";
+        private bool isHEX = false, isBIN = false, isDEC = false, isOCT = false;
         public bool IsDigitGrouping { get; set; } = false;
 
         public Programmer()
         {
             InitializeComponent();
-            LoadSettings();
+            LoadSettings(); LoadBase(); ButtonsEnabler();
             menuDigitGroupingProgrammer.IsChecked = this.IsDigitGrouping;
             UpdateProgrammerDisplays(0);
             string exeFolder = AppDomain.CurrentDomain.BaseDirectory;
@@ -274,7 +275,40 @@ namespace CalculatorApp
             currentBase = result.newBase;
             isNewEntry = false;
             UpdateProgrammerDisplays(OmniProgrammerFunctions.OmniProgrammerConvertBaseToDec(currentValue, currentBase));
-            
+            BaseEnable(); LoadBase(); ButtonsEnabler();
+        }
+
+        private void BaseEnable()
+        {
+            OmniProgrammerFunctions.OmniProgrammerBaseEnable(currentBase);
+        }
+
+        private void LoadBase()
+        {
+            isBIN = Settings.Default.IsBaseBIN;
+            isDEC = Settings.Default.IsBaseDEC;
+            isHEX = Settings.Default.IsBaseHEX;
+            isOCT = Settings.Default.IsBaseOCT;
+        }
+
+        private void ButtonsEnabler()
+        {
+            Btn0.IsEnabled = isBIN;
+            Btn1.IsEnabled = isBIN;
+            Btn2.IsEnabled = isOCT;
+            Btn3.IsEnabled = isOCT;
+            Btn4.IsEnabled = isOCT;
+            Btn5.IsEnabled = isOCT;
+            Btn6.IsEnabled = isOCT;
+            Btn7.IsEnabled = isOCT;
+            Btn8.IsEnabled = isDEC;
+            Btn9.IsEnabled = isDEC;
+            BtnA.IsEnabled = isHEX;
+            BtnB.IsEnabled = isHEX;
+            BtnC.IsEnabled = isHEX;
+            BtnD.IsEnabled = isHEX;
+            BtnE.IsEnabled = isHEX;
+            BtnF.IsEnabled = isHEX;
         }
         #endregion
 
