@@ -39,6 +39,14 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource DisabledButtonBackground}"/>
+                <Setter Property="Foreground" Value="{DynamicResource DisabledButtonForeground}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource DisabledButtonBorderBrush}"/>
+                <Setter Property="Opacity" Value="0.7"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Color x:Key="TextBoxBackgroundColor">White</Color>
